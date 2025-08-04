@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace Common.Scripts
@@ -70,8 +70,13 @@ namespace Common.Scripts
 
     private void FixedUpdate ()
     {
-      physicsBody.velocity = _movement * speed;
+      physicsBody.linearVelocity = _movement * speed;
     }
+
+public bool IsMoving()
+{
+    return _movement.sqrMagnitude > 0.001f;
+}
 
     #endregion
   }
